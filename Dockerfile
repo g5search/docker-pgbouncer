@@ -11,12 +11,19 @@ EXPOSE 6432
 
 ENV LISTEN_ADDR="0.0.0.0" \
     LISTEN_PORT="6432" \
-    USERLIST_PATH="/etc/pgbouncer/userlist.txt" \
     POOL_MODE="transaction"  \
     MAX_CLIENT_CONN="20" \
     DEFAULT_POOL_SIZE="20" \
-    DATABASE_CONFIGURATION="testing = host=127.0.0.1 port=3000 dbname=foo" \
-    ADMIN_USERS="pgbounceradmin"
+    CLIENT_DBNAME="foo" \
+    CLIENT_USER="bar" \
+    CLIENT_PASSSWORD="password" \
+    STATS_USER="baz" \
+    STATS_PASSWORD="password" \
+    SERVER_HOST="127.0.0.1" \
+    SERVER_PORT="5432" \
+    SERVER_DBNAME="foo" \
+    SERVER_USER="bar" \
+    SERVER_PASSWORD="password"
 
 ADD pgbouncer.template.ini /
 ADD start.sh /
